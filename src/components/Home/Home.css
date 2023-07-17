@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.vector-Animation {
+    filter: drop-shadow(0 40px 10px rgba(0, 0, 0, 0.2));
+    animation: vectorAnimation 1s infinite ease-in-out alternate;
+}
+
+@keyframes vectorAnimation {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.brandBanner {
+    font-size: 20px;
+}

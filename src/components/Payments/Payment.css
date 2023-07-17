@@ -1,0 +1,128 @@
+:root {
+    --color-success: #00C851;
+    --color-error: #ff4444;
+    --stroke-width: 5px;
+    --size: 110px;
+    --small-size: 80px;
+    --checkmark-color: white;
+}
+
+
+.checkmark_circle_success {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: var(--stroke-width);
+    stroke-miterlimit: 10;
+    stroke: var(--color-success);
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_circle_error {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: var(--stroke-width);
+    stroke-miterlimit: 10;
+    stroke: var(--color-error);
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: block;
+    stroke-width: var(--stroke-width);
+    stroke: var(--checkmark-color);
+    stroke-miterlimit: 10;
+    margin: 2% auto;
+}
+
+.checkmark.success {
+    box-shadow: inset 0px 0px 0px var(--color-success);
+    animation: fillsuccess 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark.error {
+    box-shadow: inset 0px 0px 0px var(--color-error);
+    animation: fillerror 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark_check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+/* 
+.progress {
+    transform: rotate(-90deg);
+    stroke: black;
+} */
+
+/* 
+.progress circle {
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    animation: dash 1.5s infinite;
+} */
+
+/* .progress {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+} */
+
+/* 
+.progress--thin {
+    left: auto;
+    right: 5%;
+} */
+
+@keyframes dash {
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -130;
+    }
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fillsuccess {
+    100% {
+        box-shadow: inset 0px 0px 0px calc(var(--size) / 2) var(--color-success);
+    }
+}
+
+@keyframes fillerror {
+    100% {
+        box-shadow: inset 0px 0px 0px calc(var(--size) / 2) var(--color-error);
+    }
+}
+
+/* Styles for larger screens */
+@media screen and (max-width: 768px) {
+    :root {
+        --size: var(--small-size);
+        /* Set the smaller size for smaller screens */
+    }
+}

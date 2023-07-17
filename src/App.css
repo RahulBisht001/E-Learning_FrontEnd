@@ -1,0 +1,63 @@
+.defaultFontFamily {
+    font-family: "Josefin Sans", sans-serif !important;
+}
+
+.defaultSideBar {
+    font-family: "Josefin Sans", sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.courseImgHover {
+    transition: all ease-in-out 0.5s;
+}
+
+.courseImgHover:hover {
+    transform: scale(1.2);
+}
+
+.defaultSubHeadingCursive {
+    font-family: "Pacifico", cursive;
+    /* font-weight: 600; */
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: #6c6b6b;
+}
+
+.videoCss {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+}
+
+.adminBoxWidth {
+    width: 20%;
+}
+
+@media (max-width: 1000px) {
+    .adminBoxWidth {
+        width: 30%;
+    }
+}
+@media (max-width: 800px) {
+    .videoCss {
+        grid-template-columns: 1fr;
+        padding: 0;
+        height: fit-content;
+    }
+
+    .adminBoxWidth {
+        width: 100%;
+    }
+}
